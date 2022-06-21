@@ -21,16 +21,48 @@ body {
   line-height: 1.7;
   letter-spacing: 0.03em;
 }
+ 
+/* Ресет */
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Контейнер */
+.container {
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  
+/* залишив щоб вам було зручніше відслідковувати */
+  outline: 1px solid red;
+}
 ul {
   list-style: none;
+  padding-left: 0;
+  margin: 0;
 }
 a {
   text-decoration: none;
 }
-/* button {
-  font-family: inherit;
-} */
+p{
+  color: var(--primary-text-color);
+}
 /* Хедер */
+.header-container {
+  display: flex;
+  align-items: center;
+}
 .header {
   background-color: #ffffff;
 }
@@ -42,6 +74,7 @@ a {
   font-size: 26px;
   line-height: 1.2;
   letter-spacing: 0.03em;
+  margin-right: 93px;
 }
 .logo-studio {
   color: #212121;
@@ -61,6 +94,19 @@ a {
 .pagination .current {
   color: var(--accent-color);
 }
+.site-nav {
+  display: inline-flex;
+  justify-content: flex-start;
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+.site-nav li:not(:last-child) {
+  margin-right: 50px;
+}
+.link {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
 /* Мейл-телефон */
 .phone a {
   color: var(--primary-text-color);
@@ -73,9 +119,21 @@ a {
 .phone a:focus {
   color: var(--hover-color);
 }
+.phone {
+  display: inline-flex;
+  margin-left: auto;
+  padding-left: 0;
+
+}
+.phone li + li {
+  margin-left: 50px;
+}
 /* Секція Герой */
 .hero {
   background-color: var(--hero-background);
+  text-align: center;
+  padding-top: 200px;
+  padding-bottom: 200px;
 }
 .hero-title {
   color: var(--hero-color);
@@ -85,6 +143,9 @@ a {
   text-align: center;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+
+  max-width: 696px;
+  margin: 0 auto; 
 }
 .button-hero {
   color: var(--button-hero-color);
@@ -97,6 +158,10 @@ a {
   letter-spacing: 0.06em;
   cursor: pointer;
   font-family: Roboto, sans-serif;
+  margin-top: 30px;
+
+  min-width: 200px;
+  padding: 10px 32px;
 }
 .button-hero:hover,
 .button-hero:focus {
@@ -122,19 +187,70 @@ a {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.03em;
+  width: 270px;
+  margin-bottom: 10px;
+}
+.vantage li:not(:last-child) {
+  margin-right: 30px;
+}
+.all-vantage {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+.vantage {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+.about-vantage {
+  width: 270px;
 }
 /* Секція чем мы занимаемся */
 .caption {
+  display: block;
   color: var(--title-text-color);
   font-weight: 700;
   font-size: 36px;
   line-height: 1.17;
   text-align: center;
   letter-spacing: 0.03em;
+  padding-bottom: 50px;
+}
+.about-caption {
+  display: flex;
+  padding-bottom: 94px;
+}
+.about-caption li:not(:last-child){
+  margin-right: 30px;
 }
 /* Секція Команда */
 .team {
   background-color: #f5f4fa;
+  padding-bottom: 94px;
+}
+.team-section {
+  display: flex;
+}
+.team-list {
+  width: calc((100% - 90px) / 4);
+  margin-right: 30px;
+}
+.team-list:nth-child(4n) {
+  margin-right: 0;
+}
+.card-text {
+  text-align: center;
+  display:block;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+}
+.team-list {
+  background: #FFFFFF;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 
+  0px 1px 1px rgba(0, 0, 0, 0.14), 
+  0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
 }
 .name {
   color: var(--title-text-color);
@@ -151,10 +267,22 @@ a {
 }
 /* Секція Футер */
 .footer {
-  background-color: var(--footer-backround)
+  background-color: var(--footer-backround);
 }
 .logo-footer {
   color: #ffffff;
+}
+.full-logo {
+  display: block;
+  padding-top: 60px;
+}
+.address {
+  display: block;
+  padding-top: 20px;
+  padding-bottom: 60px;
+}
+.address li:not(:last-child) {
+  margin-bottom: 9px;
 }
 .address a {
   font-weight: 400;
@@ -181,6 +309,15 @@ a {
 /* ПОРТФОЛІО */
 
 /* Фільтр */
+.filter {
+  display: flex;
+  justify-content: center;
+  padding-top: 94px;
+  padding-bottom: 34px;
+}
+.filter li + li {
+  margin-left: 8px;
+}
 .filter button {
   font-weight: 500;
   font-size: 16px;
@@ -189,9 +326,9 @@ a {
   color: var(--title-text-color);
   cursor: pointer;
   font-family: Roboto, sans-serif;
-
-  background-color: var(--filter-button-backround)
+  background: var(--filter-button-backround);
   border-radius: 4px;
+  border: 0;
 }
 .filter .current {
   background-color: var(--accent-color);
@@ -215,3 +352,33 @@ a {
   font-size: 16px;
   line-height: 1.9;
 }
+.works {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 94px;
+}
+.works-item {
+  width: calc((100% - 60px) / 3);
+  margin-right: 30px;
+  margin-bottom: 30px;
+  background: #FFFFFF;
+  border: 1px solid #EEEEEE;
+}
+
+
+/* НЕ МОЖУ ПРИБРАТИ НИЖНІЙ МАРЖН В ПРАВОМУ РЯДКУ*/
+.works-item:nth-child(3n) {
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.works-text {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+
+
+
+
