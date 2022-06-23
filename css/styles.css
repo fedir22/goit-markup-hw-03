@@ -14,7 +14,7 @@
 }
 
 body {
-  background-color: var(--background-color)
+  background-color: var(--background-color);
   color: var(--primary-text-color);
   font-family: Roboto, sans-serif;
   font-size: 14px;
@@ -43,28 +43,25 @@ img {
   padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
-  
-/* залишив щоб вам було зручніше відслідковувати */
-  outline: 1px solid red;
 }
-ul {
+.list {
   list-style: none;
   padding-left: 0;
   margin: 0;
 }
-a {
+.link {
   text-decoration: none;
 }
-p{
+p {
   color: var(--primary-text-color);
 }
 /* Хедер */
+.header {
+  border-bottom: 1px solid #ECECEC;
+}
 .header-container {
   display: flex;
   align-items: center;
-}
-.header {
-  background-color: #ffffff;
 }
 /* Лого */
 .logo {
@@ -86,6 +83,11 @@ p{
   font-size: 14px;
   line-height: 1.2;
   letter-spacing: 0.02em;
+  display: block;
+}
+.nav-link {
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
 .pagination a:hover,
 .pagination a:focus {
@@ -95,18 +97,12 @@ p{
   color: var(--accent-color);
 }
 .site-nav {
-  display: inline-flex;
-  justify-content: flex-start;
-  padding-top: 32px;
-  padding-bottom: 32px;
+  display: flex;
 }
 .site-nav li:not(:last-child) {
   margin-right: 50px;
 }
-.link {
-  padding-top: 32px;
-  padding-bottom: 32px;
-}
+
 /* Мейл-телефон */
 .phone a {
   color: var(--primary-text-color);
@@ -120,10 +116,8 @@ p{
   color: var(--hover-color);
 }
 .phone {
-  display: inline-flex;
+  display: flex;
   margin-left: auto;
-  padding-left: 0;
-
 }
 .phone li + li {
   margin-left: 50px;
@@ -159,6 +153,7 @@ p{
   cursor: pointer;
   font-family: Roboto, sans-serif;
   margin-top: 30px;
+  border: none;
 
   min-width: 200px;
   padding: 10px 32px;
@@ -214,7 +209,7 @@ p{
   line-height: 1.17;
   text-align: center;
   letter-spacing: 0.03em;
-  padding-bottom: 50px;
+  margin: 50px;
 }
 .about-caption {
   display: flex;
@@ -224,9 +219,12 @@ p{
   margin-right: 30px;
 }
 /* Секція Команда */
+.section {
+  padding-bottom: 94px;
+  padding-top: 94px;
+}
 .team {
   background-color: #f5f4fa;
-  padding-bottom: 94px;
 }
 .team-section {
   display: flex;
@@ -258,6 +256,7 @@ p{
   font-size: 16px;
   line-height: 1.18;
   letter-spacing: 0.03em;
+  margin-bottom: 10px;
 }
 .text {
   font-weight: 400;
@@ -268,18 +267,18 @@ p{
 /* Секція Футер */
 .footer {
   background-color: var(--footer-backround);
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 .logo-footer {
   color: #ffffff;
 }
 .full-logo {
   display: block;
-  padding-top: 60px;
 }
 .address {
-  display: block;
-  padding-top: 20px;
-  padding-bottom: 60px;
+  font-style: normal;
+  margin-top: 20px;
 }
 .address li:not(:last-child) {
   margin-bottom: 9px;
@@ -289,7 +288,6 @@ p{
   font-size: 14px;
   line-height: 1.7;
   letter-spacing: 0.03em;
-  font-style: normal;
 }
 .map {
   color: #ffffff;
@@ -312,8 +310,7 @@ p{
 .filter {
   display: flex;
   justify-content: center;
-  padding-top: 94px;
-  padding-bottom: 34px;
+  margin-bottom: 50px;
 }
 .filter li + li {
   margin-left: 8px;
@@ -329,14 +326,18 @@ p{
   background: var(--filter-button-backround);
   border-radius: 4px;
   border: 0;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 22px;
+  padding-right: 22px;
 }
 .filter .current {
   background-color: var(--accent-color);
-  color: #ffffff;
+  color: var(--background-color)
 }
 .filter button:hover,
 .filter button:focus {
-  color: #ffffff;
+  color: var(--background-color);
   background-color: var(--hover-color);
 }
 /* Наші роботи */
@@ -355,20 +356,18 @@ p{
 .works {
   display: flex;
   flex-wrap: wrap;
-  padding-bottom: 94px;
 }
 .works-item {
   width: calc((100% - 60px) / 3);
   margin-right: 30px;
   margin-bottom: 30px;
-  background: #FFFFFF;
+  background: var(--background-color);
   border: 1px solid #EEEEEE;
 }
-
-
-/* НЕ МОЖУ ПРИБРАТИ НИЖНІЙ МАРЖН В ПРАВОМУ РЯДКУ*/
 .works-item:nth-child(3n) {
   margin-right: 0;
+}
+.works-item:nth-last-child(- 3 + n) {
   margin-bottom: 0;
 }
 .works-text {
